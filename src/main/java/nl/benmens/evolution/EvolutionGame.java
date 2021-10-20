@@ -15,7 +15,13 @@ public class EvolutionGame extends PApplet {
   private World world = new World(80, 60);
 
   public void settings() {
-    size(800, 600, P2D);
+		String os = System.getProperty("os.name");
+    
+    if (os.equals("Mac OS X")) {
+      size(800, 600);
+		} else {
+      size(800, 600, P2D);
+		}
 
     ControlerFactory controlerFactory = new ControlerFactory();
 
